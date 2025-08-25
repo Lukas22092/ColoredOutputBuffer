@@ -73,4 +73,4 @@ int main() {
 - **magenta**
 - **cyan**
 
-You can easily add more colors by extending the colors vector with new Color entries by just adding a name as well its corresponding ANSI Color Code
+You can easily add more colors by extending the colors vector with new Color entries by just adding a name aswell its corresponding ANSI Color Code
