@@ -2,7 +2,7 @@
 
 
 
-It works by overriding std::streambuf to intercept what you print to std::cout and decorate it with ANSI escape codes for colored text";
+It works by overriding std::streambuf to intercept what you print to std::cout and decorate it with ANSI escape codes for colored text"
 ## Features
 
 - **Rainbow Mode**: Automatically cycles through colors for each space-separated word
