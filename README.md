@@ -5,20 +5,18 @@
 It works by overriding std::streambuf to intercept what you print to std::cout and decorate it with ANSI escape codes for colored text
 ## Features
 
-- **Rainbow Mode**: Automatically cycles through colors for each space-separated word
+- **Rainbow **: Automatically cycles through colors for each space-separated word
 - **Specific Colors**: Set output to any supported color by name
-- **Automatic Reset**: Colors automatically reset when the object is destroyed
-- **Safe Wrapper**: Includes a RAII wrapper for safe usage
 
 ## Installation
 
 Simply include the header file in your C++ project:
 
 ```cpp
-#include "ColoredBuffer.hpp"  // or copy the code directly into your file
+#include "ColoredBuffer.hpp"  
 // Create ColoredBuffer instance and wrapper
 ColoredBuffer rb(std::cout.rdbuf());
-wrapper guard(rb);  // RAII wrapper for safety
+wrapper guard(rb);  
 // Now all std::cout output will be colored!
 ```
 ## Available Methods
@@ -46,7 +44,7 @@ rb.check_avaiable_colors();
 
 int main() {
     ColoredBuffer rb(std::cout.rdbuf());
-    wrapper guard(rb);  // RAII guard to restore std::cout
+    wrapper guard(rb);  
 
     rb.rainbow();
     std::cout << "This text cycles through rainbow colors word by word!\n";
@@ -58,7 +56,7 @@ int main() {
     rb.set_color("cyan");
     std::cout << "And now in cyan.\n";
 
-    rb.set_color("darkgreen"); // not supported → shows available colors
+    rb.set_color("darkgreen"); // not supported -> shows available colors
 }
 ```
 ## Output
@@ -74,3 +72,7 @@ int main() {
 - **cyan**
 
 You can easily add more colors by extending the colors vector with new Color entries by just adding a name aswell its corresponding ANSI Color Code
+
+## how to improve
+
+instead of using a vector to store the Colors, consider using a Enum. trying to access colors that are not present will now be a compile time error. 
