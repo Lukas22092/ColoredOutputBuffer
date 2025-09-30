@@ -76,3 +76,9 @@ You can easily add more colors by extending the colors vector with new Color ent
 ## how to improve
 
 instead of using a vector to store the Colors, consider using a Enum. trying to access colors that are not present will now be a compile time error. 
+
+## what i learned
+* basic understanding on how iostream/streams really work
+* why RAII wrappers are important
+* using error codes can be more useful than writing methods - like i did in check_avaiable_colors
+  
